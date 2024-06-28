@@ -1,0 +1,14 @@
+# Running `clang-format -i` on any file in this repository will apply the here
+# defined code style to it. Note that `-i` changes the files inplace!
+# To recurse into subdirectories the following can be used:
+# find ./ -iname '*.hh' -o -iname '*.cc' | xargs clang-format -i 
+---
+# Use defaults from GNU style
+BasedOnStyle: GNU
+---
+# Put C++ specific adjustments here
+Language: Cpp
+# Force pointers to the type (i.e. left)
+DerivePointerAlignment: false
+PointerAlignment: Left
+---
