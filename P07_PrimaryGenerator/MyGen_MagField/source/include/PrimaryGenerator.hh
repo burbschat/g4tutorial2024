@@ -4,20 +4,20 @@
 #ifndef PrimaryGenerator_h
 #define PrimaryGenerator_h 1
 
-#include "G4VUserPrimaryGeneratorAction.hh"
 #include "G4ThreeVector.hh"
+#include "G4VUserPrimaryGeneratorAction.hh"
 class G4ParticleDefinition;
 class G4Event;
 
 //------------------------------------------------------------------------------
-  class PrimaryGenerator : public G4VUserPrimaryGeneratorAction
+class PrimaryGenerator : public G4VUserPrimaryGeneratorAction
 //------------------------------------------------------------------------------
 {
-  public:
-    PrimaryGenerator();
-   ~PrimaryGenerator() override;
+public:
+  PrimaryGenerator ();
+  ~PrimaryGenerator () override;
 
-  public:
-    void GeneratePrimaries( G4Event* ) override;
+public:
+  void GeneratePrimaries (G4Event*) override;
 };
 #endif

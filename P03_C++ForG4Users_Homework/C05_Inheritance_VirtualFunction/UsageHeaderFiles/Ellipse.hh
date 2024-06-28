@@ -3,9 +3,10 @@
 
 #include "Shape_2P.hh"
 
-class Ellipse : public Shape_2P {
-  public:
-    Ellipse( double x, double y );
-    double area();
+class Ellipse : public Shape_2P
+{
+public:
+  Ellipse (double x, double y);
+  double area ();
 };
 #endif

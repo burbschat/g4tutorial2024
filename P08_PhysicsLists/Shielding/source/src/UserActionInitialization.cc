@@ -5,19 +5,22 @@
 #include "PrimaryGenerator.hh"
 
 //------------------------------------------------------------------------------
-  UserActionInitialization::UserActionInitialization()
-  : G4VUserActionInitialization{}
-//------------------------------------------------------------------------------
-{}
-
-//------------------------------------------------------------------------------
-  UserActionInitialization::~UserActionInitialization()
-//------------------------------------------------------------------------------
-{}
-
-//------------------------------------------------------------------------------
-  void UserActionInitialization::Build() const
+UserActionInitialization::UserActionInitialization ()
+    : G4VUserActionInitialization{}
 //------------------------------------------------------------------------------
 {
-  SetUserAction( new PrimaryGenerator{} );
+}
+
+//------------------------------------------------------------------------------
+UserActionInitialization::~UserActionInitialization ()
+//------------------------------------------------------------------------------
+{
+}
+
+//------------------------------------------------------------------------------
+void
+UserActionInitialization::Build () const
+//------------------------------------------------------------------------------
+{
+  SetUserAction (new PrimaryGenerator{});
 }

@@ -1,8 +1,10 @@
-#include <iostream>
 #include "Rectangle.hh"
+#include <iostream>
 using namespace std;
 
-int main() {
+int
+main ()
+{
   Rectangle rect{ 3.0, 4.0 };
-  cout << "Area: " << rect.area() << endl;
+  cout << "Area: " << rect.area () << endl;
 }

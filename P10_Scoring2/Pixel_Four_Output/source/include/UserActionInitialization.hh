@@ -6,32 +6,29 @@
 
 #include "G4VUserActionInitialization.hh"
 
-class SimData ;
+class SimData;
 
 //------------------------------------------------------------------------------
-  class UserActionInitialization : public G4VUserActionInitialization
+class UserActionInitialization : public G4VUserActionInitialization
 //------------------------------------------------------------------------------
 {
-  public:
-    UserActionInitialization();
-    ~UserActionInitialization() override;
+public:
+  UserActionInitialization ();
+  ~UserActionInitialization () override;
 
-    void BuildForMaster() const override;
-    void Build() const override;
+  void BuildForMaster () const override;
+  void Build () const override;
 
-    void SetSimData(SimData* simdata) ;
- private:
+  void SetSimData (SimData* simdata);
 
-    SimData* simdata;
-
+private:
+  SimData* simdata;
 };
 
-inline void UserActionInitialization::SetSimData(SimData* data )
-	{
-		simdata = data ;
-	}
+inline void
+UserActionInitialization::SetSimData (SimData* data)
+{
+  simdata = data;
+}
 
 #endif
-
-
-

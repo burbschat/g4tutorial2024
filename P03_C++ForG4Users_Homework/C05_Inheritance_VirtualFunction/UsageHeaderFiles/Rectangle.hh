@@ -3,9 +3,10 @@
 
 #include "Shape_2P.hh"
 
-class Rectangle : public Shape_2P {
-  public:
-    Rectangle( double x, double y );
-    double area();
+class Rectangle : public Shape_2P
+{
+public:
+  Rectangle (double x, double y);
+  double area ();
 };
 #endif

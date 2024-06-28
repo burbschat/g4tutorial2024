@@ -4,32 +4,33 @@
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #include "MyPhysicsList.hh"
 #include "G4DecayPhysics.hh"
-#include "G4RadioactiveDecayPhysics.hh"
 #include "G4EmStandardPhysics.hh"
+#include "G4RadioactiveDecayPhysics.hh"
 
 //------------------------------------------------------------------------------
-  MyPhysicsList::MyPhysicsList()
-  : G4VModularPhysicsList{}
+MyPhysicsList::MyPhysicsList () : G4VModularPhysicsList{}
 //------------------------------------------------------------------------------
 {
-// Default physics
-   RegisterPhysics( new G4DecayPhysics{} );
+  // Default physics
+  RegisterPhysics (new G4DecayPhysics{});
 
-// Radioactive decay
-   RegisterPhysics( new G4RadioactiveDecayPhysics{} );
+  // Radioactive decay
+  RegisterPhysics (new G4RadioactiveDecayPhysics{});
 
-// EM physics
-   RegisterPhysics( new G4EmStandardPhysics{} );
+  // EM physics
+  RegisterPhysics (new G4EmStandardPhysics{});
 }
 
 //------------------------------------------------------------------------------
-  MyPhysicsList::~MyPhysicsList()
-//------------------------------------------------------------------------------
-{}
-
-//------------------------------------------------------------------------------
-  void MyPhysicsList::SetCuts()
+MyPhysicsList::~MyPhysicsList ()
 //------------------------------------------------------------------------------
 {
-    G4VUserPhysicsList::SetCuts();
+}
+
+//------------------------------------------------------------------------------
+void
+MyPhysicsList::SetCuts ()
+//------------------------------------------------------------------------------
+{
+  G4VUserPhysicsList::SetCuts ();
 }

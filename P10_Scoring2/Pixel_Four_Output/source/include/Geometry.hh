@@ -11,27 +11,28 @@ class SimData;
 class G4GlobalMagFieldMessenger;
 
 //------------------------------------------------------------------------------
-  class Geometry : public G4VUserDetectorConstruction
+class Geometry : public G4VUserDetectorConstruction
 //------------------------------------------------------------------------------
 {
-  public:
-    Geometry();
-   ~Geometry() override;
+public:
+  Geometry ();
+  ~Geometry () override;
 
-    G4VPhysicalVolume* Construct() override;
-    void ConstructSDandField() override;
+  G4VPhysicalVolume* Construct () override;
+  void ConstructSDandField () override;
 
-    void SetSimData(SimData* data);
+  void SetSimData (SimData* data);
 
-  private:
-    SimData* simdata ;
-    static G4ThreadLocal G4GlobalMagFieldMessenger* fMagFieldMessenger;
+private:
+  SimData* simdata;
+  static G4ThreadLocal G4GlobalMagFieldMessenger* fMagFieldMessenger;
 };
 
-inline void Geometry::SetSimData(SimData* data)
-	{
-	  G4cout << "Geometry::SetSimData " << G4endl;
-	  simdata = data ;
-	}
+inline void
+Geometry::SetSimData (SimData* data)
+{
+  G4cout << "Geometry::SetSimData " << G4endl;
+  simdata = data;
+}
 
 #endif

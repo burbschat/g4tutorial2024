@@ -6,23 +6,23 @@
 #include "G4GeneralParticleSource.hh"
 
 //------------------------------------------------------------------------------
-  PrimaryGenerator::PrimaryGenerator()
-  : fpParticleGPS{nullptr}
+PrimaryGenerator::PrimaryGenerator () : fpParticleGPS{ nullptr }
 //------------------------------------------------------------------------------
 {
   fpParticleGPS = new G4GeneralParticleSource{};
 }
 
 //------------------------------------------------------------------------------
-  PrimaryGenerator::~PrimaryGenerator()
+PrimaryGenerator::~PrimaryGenerator ()
 //------------------------------------------------------------------------------
 {
   delete fpParticleGPS;
 }
 
 //------------------------------------------------------------------------------
-  void PrimaryGenerator::GeneratePrimaries( G4Event* anEvent )
+void
+PrimaryGenerator::GeneratePrimaries (G4Event* anEvent)
 //------------------------------------------------------------------------------
 {
-  fpParticleGPS->GeneratePrimaryVertex( anEvent );
+  fpParticleGPS->GeneratePrimaryVertex (anEvent);
 }

@@ -14,28 +14,30 @@ class SimData;
 
 //
 //------------------------------------------------------------------------------
-  class SensitiveVolume : public G4VSensitiveDetector
+class SensitiveVolume : public G4VSensitiveDetector
 //------------------------------------------------------------------------------
 {
-  public:
-      SensitiveVolume(G4String);
-     ~SensitiveVolume() override = default;
+public:
+  SensitiveVolume (G4String);
+  ~SensitiveVolume () override = default;
 
-      void Initialize(G4HCofThisEvent*) override;
-      G4bool ProcessHits(G4Step*, G4TouchableHistory*)  override;
-      void EndOfEvent(G4HCofThisEvent*)  override;
+  void Initialize (G4HCofThisEvent*) override;
+  G4bool ProcessHits (G4Step*, G4TouchableHistory*) override;
+  void EndOfEvent (G4HCofThisEvent*) override;
 
-      void SetSimData(SimData* data);
+  void SetSimData (SimData* data);
+
 private:
-	G4double fEdep;
-      G4double fStep;
-	SimData* simdata;
+  G4double fEdep;
+  G4double fStep;
+  SimData* simdata;
 };
 
-inline void SensitiveVolume::SetSimData(SimData* data)
-	{
-		G4cout << " simdata set by SensitiveVolume "<< G4endl;
-		simdata = data;
-	}
+inline void
+SensitiveVolume::SetSimData (SimData* data)
+{
+  G4cout << " simdata set by SensitiveVolume " << G4endl;
+  simdata = data;
+}
 
 #endif
